@@ -1,0 +1,114 @@
+import 'package:flutter/material.dart';
+void main() {
+  runApp(const MyApp());
+}
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});  
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Profile(),
+    );
+  }
+}
+class Profile extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Profile'),
+        centerTitle: true,
+        leading: Icon(Icons.arrow_back),
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      radius: 40,
+                      backgroundImage: AssetImage('images/1773012448319.jpg'),
+                    ),
+                    SizedBox(height: 20,),
+                    Divider(),
+                    SizedBox(height: 10,),
+                    Text(
+                      'Profile information',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(
+                        'Username',
+                        style:TextStyle(color: Colors.grey)
+                      ),
+                      trailing: Text('ex.kiro051'),
+                      onLongPress: (){},
+                    ),
+                    ListTile(
+                      title: Text(
+                        'Name',
+                        style:TextStyle(color: Colors.grey)
+                      ),
+                      trailing: Text('ex.Kirolos'),
+                      onLongPress: (){},
+                    ),
+                    SizedBox(height: 20,),
+                    Divider(),
+                    SizedBox(height: 10,),
+                    Text(
+                      'Personal information',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(
+                        'User ID',
+                        style:TextStyle(color: Colors.grey)
+                      ),
+                      trailing: Text('ex.05101520 (8 numbers)'),
+                      onLongPress: (){},
+                    ),
+                    ListTile(
+                      title: Text(
+                        'E-mail',
+                        style:TextStyle(color: Colors.grey)
+                      ),
+                      trailing: Text('ex.kirolos@gmail.com'),
+                      onLongPress: (){},
+                    ),
+                    ListTile(
+                      title: Text(
+                        'Phone number',
+                        style:TextStyle(color: Colors.grey)
+                      ),
+                      trailing: Text('ex.+201234567890'),
+                      onLongPress: (){},
+                    ),
+                    ListTile(
+                      title: Text(
+                        'Date of birth',
+                        style:TextStyle(color: Colors.grey)
+                      ),
+                      trailing: Text('ex.29sep2006'),
+                      onLongPress: (){},
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        )
+      ),
+    );
+  }
+}
